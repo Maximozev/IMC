@@ -1,8 +1,11 @@
+import GithubSignInButton from "@/app/components/GithubSignInButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import GoogleSignInButton from "@/app/components/GoogleSignInButton";
 
 export default function Login() {
   return (
@@ -36,12 +39,8 @@ export default function Login() {
           </Link>
         </div>
         <div className="flex w-full justify-center items-center gap-x-3 mt-6">
-          <Button variant="outline" size="icon">
-            <FaGithub />
-          </Button>
-          <Button variant="outline" size="icon">
-            <FaGoogle />
-          </Button>
+          <GithubSignInButton />
+          <GoogleSignInButton />
         </div>
       </div>
     </div>

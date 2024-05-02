@@ -1,3 +1,5 @@
+import GithubSignInButton from "@/app/components/GithubSignInButton";
+import GoogleSignInButton from "@/app/components/GoogleSignInButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -41,12 +43,8 @@ export default function SignUp() {
           </Link>
         </div>
         <div className="flex w-full justify-center items-center gap-x-3 mt-6">
-          <Button variant="outline" size="icon">
-            <FaGithub />
-          </Button>
-          <Button variant="outline" size="icon">
-            <FaGoogle />
-          </Button>
+          <GithubSignInButton />
+          <GoogleSignInButton />
         </div>
       </div>
     </div>
