@@ -1,13 +1,20 @@
 import GithubSignInButton from "@/app/components/GithubSignInButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-import { FaGoogle } from "react-icons/fa";
 import GoogleSignInButton from "@/app/components/GoogleSignInButton";
+import SignOutButton from "@/app/components/SignOutButton";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/utils/auth";
+import { redirect } from "next/navigation";
 
-export default function Login() {
+export default async function Login() {
+  const session = await getServerSession(authOptions);
+
+  if (session) {
+    return redirect("/home");
+  }
+
   return (
     <div className="h-screen flex justify-center items-center">
       <div className="mt-24 rounded bg-gray-600/10 px-6 py-10 md:mt-0 md:max-w-sm md:px-14">
@@ -41,6 +48,7 @@ export default function Login() {
         <div className="flex w-full justify-center items-center gap-x-3 mt-6">
           <GithubSignInButton />
           <GoogleSignInButton />
+          <SignOutButton />
         </div>
       </div>
     </div>
