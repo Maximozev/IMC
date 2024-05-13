@@ -14,5 +14,5 @@ export default async function HomeLayout({
     return redirect("/login");
   }
 
-  return <div>{children};</div>;
+  return <div>{children}</div>;
 }
