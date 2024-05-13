@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../public/IMC_logo.svg";
 import { usePathname } from "next/navigation";
-import { CiHeart } from "react-icons/ci";
+import { CiSearch } from "react-icons/ci";
+import { CiBellOn } from "react-icons/ci";
+import UserNav from "./UserNav";
 
 interface linkProps {
   name: string;
@@ -53,6 +55,12 @@ export default function Navbar() {
             </div>
           ))}
         </ul>
+      </div>
+
+      <div className="flex items-center gap-x-8">
+        <CiSearch className="w-7 h-7 cursor-pointer" />
+        <CiBellOn className="w-7 h-7 cursor-pointer" />
+        <UserNav />
       </div>
     </div>
   );
