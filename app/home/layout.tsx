@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import { authOptions } from "../utils/auth";
 import { redirect } from "next/navigation";
 import Navbar from "../components/Navbar";
+import HomePage from "./page";
 
 export default async function HomeLayout({
   children,
@@ -19,7 +20,7 @@ export default async function HomeLayout({
     <>
       <Navbar />
       <main className="w-full max-w-7xl mx-auto sm:px-6 lg:px-8">
-        {children}
+        <HomePage />
       </main>
     </>
   );
