@@ -6,7 +6,7 @@ export default function HomePage() {
   return <Banner />;
 }
 
-export const getServerSideProps = async () => {
+export const fetchData = async () => {
   const [
     netflixOriginals,
     trendingNow,
